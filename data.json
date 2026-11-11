@@ -10,17 +10,17 @@
     "ticker": "DORMENIQUE ✦ ARTES VISUAIS ✦ ILUSTRAÇÃO ✦ DESIGN ✦ PORTFOLIO & ARQUIVO ✦ ",
     "hero": {
       "badge": "HELLO & WELCOME",
-      "title": "Olá, sou a Dormenique",
+      "title": "Olá, eu sou a Dormenique",
       "subtitle": "Artista visual e criadora com foco em processos manuais e narrativas visuais.",
       "paragraphs": [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
-        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.",
-        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."
+        "Desde 1997 eu sou artista. Já de pequena eu estudava desenho, pintava quadros e passava horas modelando em biscuit em casa com minha mãe. ",
+        "Formada professora de artes pela Faculdade Paulista de Artes em São Paulo/SP, sou especialista em Hand Lettering e lecionei de forma independente no Brasil, em parcerias com gigantes como Papelaria Universitária, SESC e Casa das Letras."
       ],
-      "cta_text": "entrar em contato para trabalhos ↗",
+      "cta_text": "entrar em contacto ↗",
       "cta_link": "#contact"
     },
     "timeline_title": "Trajetória Artística",
+    "learn_more": "Saiba mais ↗",
     "gallery_title": "Obras & Projetos",
     "intro_cards": [
       {
@@ -42,23 +42,31 @@
     "timeline": [
       {
         "year": "2026",
-        "title": "Lorem Ipsum Dolor",
-        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam."
+        "city": "Lisboa - Portugal",
+        "title": "Quieto Space",
+        "text": "A criação do Quieto vem da necessidade de explorar o manual. Trabalhos feitos à mão sempre fizeram parte da minha trajetória e em 2026 mais do que nunca a inteligência artificial e o digital estão fortemente presentes no nosso dia a dia. O Quieto é um projeto de aulas para iniciantes que incentiva e desafia cada um de nós a reservar um tempo fora dos ecrãs para criar peças manualmente. Sem pressão, sem importância estética: somente o aluno e os materiais, dando vida a algo novo.",
+        "link": "#"
       },
       {
-        "year": "2024 — 2025",
-        "title": "Consectetur Adipiscing",
-        "text": "Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper."
+        "year": "2023 — 2026",
+        "city": "Lisboa - Portugal",
+        "title": "Criação Contínua",
+        "text": "Nunca parei de criar. Mesmo ao trabalhar em outras áreas, a arte sempre é parte da minha vida. Desde pintura manual, colagem, até projetos de costura.",
+        "link": "#"
       },
       {
-        "year": "2022 — 2023",
-        "title": "Tempor Incididunt",
-        "text": "Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra."
+        "year": "2020 — 2022",
+        "city": "Lisboa - Portugal",
+        "title": "Freelance Designer",
+        "text": "Pude colaborar com trabalhos de design, desenvolvendo identidades visuais para marcas e podcasts de grande público. Aplicando minhas habilidades de lettering e teoria das cores.",
+        "link": "#"
       },
       {
-        "year": "2019 — 2021",
-        "title": "Magna Aliqua",
-        "text": "Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh."
+        "year": "2017 — 2020",
+        "city": "São Paulo - SP - Brasil",
+        "title": "Professora de Hand Lettering",
+        "text": "Sou especialista em Hand Lettering e lecionei de forma independente no Brasil, em parcerias com gigantes como Papelaria Universitária, SESC e Casa das Letras. Também pude lecionar para turmas particulares e exclusivas.",
+        "link": "#"
       }
     ],
     "footer_title": "Dormenique",
@@ -78,13 +86,13 @@
       "subtitle": "Visual artist and creator focused on tactile processes and thoughtful visual storytelling.",
       "paragraphs": [
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
-        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.",
-        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."
+        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia."
       ],
       "cta_text": "enquire about working together ↗",
       "cta_link": "#contact"
     },
     "timeline_title": "Artistic Journey",
+    "learn_more": "Learn more ↗",
     "gallery_title": "Selected Works",
     "intro_cards": [
       {
@@ -106,23 +114,31 @@
     "timeline": [
       {
         "year": "2026",
-        "title": "Lorem Ipsum Dolor",
-        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam."
+        "city": "Lisbon - Portugal",
+        "title": "Quieto Space",
+        "text": "The creation of Quieto stems from the need to explore tactile, handmade arts. Quieto is a project of workshops designed for beginners, challenging us to step away from screens and create with our own hands without pressure or perfection.",
+        "link": "#"
       },
       {
-        "year": "2024 — 2025",
-        "title": "Consectetur Adipiscing",
-        "text": "Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper."
+        "year": "2023 — 2026",
+        "city": "Lisbon - Portugal",
+        "title": "Continuous Creation",
+        "text": "Never stopped creating. Hand painting, collage, sewing, and mixed-media projects remained a core part of my everyday life alongside professional endeavors.",
+        "link": "#"
       },
       {
-        "year": "2022 — 2023",
-        "title": "Tempor Incididunt",
-        "text": "Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra."
+        "year": "2020 — 2022",
+        "city": "Lisbon - Portugal",
+        "title": "Freelance Designer",
+        "text": "Collaborated with brand identity projects, visual systems for prominent podcasts and independent creators, leveraging lettering skills and color theory.",
+        "link": "#"
       },
       {
-        "year": "2019 — 2021",
-        "title": "Magna Aliqua",
-        "text": "Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh."
+        "year": "2017 — 2020",
+        "city": "São Paulo - SP - Brazil",
+        "title": "Hand Lettering Educator",
+        "text": "Specialized in hand lettering instruction across Brazil, partnering with institutions like Papelaria Universitária, SESC, and Casa das Letras, in addition to leading private workshops.",
+        "link": "#"
       }
     ],
     "footer_title": "Dormenique",

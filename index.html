@@ -12,7 +12,7 @@
 
   <style>
     /* =========================================================
-       PALETA DE CORES (Guia de Estilos Fornecido)
+       PALETA DE CORES (Guia de Estilos)
        ========================================================= */
     :root {
       --red-1: #4A1521;
@@ -39,9 +39,7 @@
       --gray-2: #969595;
       --white: #FFFFFF;
 
-      /* Mapeamento Semântico e Referência */
       --bg-page: var(--pink-4);
-      --bg-hero: #FFF7F2;
       --card-bg: var(--white);
       --text-main: var(--black);
       --text-muted: var(--gray-1);
@@ -77,7 +75,7 @@
     }
 
     /* =========================================================
-       HEADER & NAVEGAÇÃO TRIPARTIDA (Conforme Referência)
+       HEADER & NAVEGAÇÃO TRIPARTIDA
        ========================================================= */
     header {
       background: var(--white);
@@ -130,7 +128,6 @@
       align-items: center;
     }
 
-    /* Seletor de Idioma PT / EN */
     .lang-switcher {
       display: inline-flex;
       background: var(--pink-4);
@@ -182,7 +179,7 @@
     }
 
     /* =========================================================
-       HERO EDITORIAL / GET TO KNOW ME (Layout da Referência)
+       HERO EDITORIAL / GET TO KNOW ME
        ========================================================= */
     .hero-section {
       background-color: var(--white);
@@ -199,7 +196,6 @@
       align-items: center;
     }
 
-    /* Moldura da Foto com Badge Circular Sobreposto */
     .hero-portrait-wrap {
       position: relative;
       width: 100%;
@@ -222,7 +218,6 @@
       display: block;
     }
 
-    /* Badge Circular Estilo Selo Vintage */
     .retro-badge {
       position: absolute;
       top: -24px;
@@ -262,7 +257,6 @@
       color: var(--purple-1);
     }
 
-    /* Coluna de Descrição e Bio */
     .hero-bio-wrap {
       display: flex;
       flex-direction: column;
@@ -291,9 +285,9 @@
     .hero-body-text {
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: 1.15rem;
       margin-bottom: 2rem;
-      font-size: 0.95rem;
+      font-size: 0.98rem;
       color: var(--gray-1);
     }
 
@@ -314,7 +308,7 @@
     }
 
     /* =========================================================
-       CARDS INTRODUTÓRIOS (Estilo Features Ref)
+       CARDS INTRODUTÓRIOS
        ========================================================= */
     .cards-section {
       background-color: var(--yellow-4);
@@ -367,7 +361,7 @@
     }
 
     /* =========================================================
-       TIMELINE & GALERIA
+       TIMELINE COM CIDADE E BOTÃO "SAIBA MAIS"
        ========================================================= */
     .section-wrap {
       max-width: 1080px;
@@ -395,7 +389,7 @@
 
     .timeline-item {
       position: relative;
-      margin-bottom: 2.5rem;
+      margin-bottom: 3.5rem;
     }
 
     .timeline-item::before {
@@ -415,32 +409,81 @@
       font-size: 0.75rem;
     }
 
+    .timeline-header-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 0.65rem;
+    }
+
     .timeline-year {
       font-family: var(--font-mono);
       background: var(--purple-1);
       color: var(--white);
       display: inline-block;
-      padding: 0.2rem 0.6rem;
+      padding: 0.22rem 0.65rem;
       border-radius: 6px;
       font-weight: 700;
-      font-size: 0.85rem;
-      margin-bottom: 0.5rem;
+      font-size: 0.82rem;
+    }
+
+    .timeline-city {
+      font-family: var(--font-mono);
+      background: var(--white);
+      color: var(--red-2);
+      border: 1.5px solid var(--border-dark);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.18rem 0.65rem;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.78rem;
     }
 
     .timeline-heading {
       font-family: var(--font-display);
-      font-size: 1.25rem;
+      font-size: 1.35rem;
       color: var(--black);
       font-weight: 800;
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.5rem;
     }
 
     .timeline-text {
       color: var(--gray-1);
       font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 1rem;
     }
 
-    /* GALERIA DE OBRAS */
+    /* Botão Saiba Mais / Portfolio da Era */
+    .timeline-btn-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--black);
+      background: var(--white);
+      border: 2px solid var(--border-dark);
+      border-radius: 8px;
+      padding: 0.45rem 0.9rem;
+      box-shadow: 3px 3px 0px var(--border-dark);
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .timeline-btn-more:hover {
+      background: var(--yellow-2);
+      transform: translate(-2px, -2px);
+      box-shadow: 5px 5px 0px var(--border-dark);
+    }
+
+    /* =========================================================
+       GALERIA DE OBRAS
+       ========================================================= */
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -506,7 +549,9 @@
       color: var(--gray-1);
     }
 
-    /* FOOTER */
+    /* =========================================================
+       FOOTER
+       ========================================================= */
     footer {
       background: var(--red-1);
       color: var(--white);
@@ -529,7 +574,6 @@
       color: var(--pink-4);
     }
 
-    /* RESPONSIVIDADE */
     @media (max-width: 860px) {
       header {
         grid-template-columns: 1fr auto;
@@ -553,12 +597,15 @@
         text-align: center;
         align-items: center;
       }
+      .timeline-header-meta {
+        justify-content: flex-start;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- BARRA DE NAVEGAÇÃO / MENU COMPLETO -->
+  <!-- BARRA DE NAVEGAÇÃO -->
   <header>
     <nav class="nav-left">
       <a href="#about" class="nav-link" id="nav-about"></a>
@@ -582,11 +629,11 @@
     <div class="ticker-content" id="ticker-text"></div>
   </div>
 
-  <!-- HERO SECTION NO ESTILO DA REFERÊNCIA -->
+  <!-- HERO SECTION -->
   <section class="hero-section" id="about">
     <div class="hero-container">
       
-      <!-- Lado Esquerdo: Foto & Selo Sobreposto -->
+      <!-- Lado Esquerdo: Foto & Selo -->
       <div class="hero-portrait-wrap">
         <div class="hero-image-card">
           <img id="hero-img" src="" alt="Dormenique" />
@@ -597,7 +644,7 @@
         </div>
       </div>
 
-      <!-- Lado Direito: Texto, Bio & CTA -->
+      <!-- Lado Direito: Apresentação -->
       <div class="hero-bio-wrap">
         <h1 class="hero-title" id="hero-title"></h1>
         <p class="hero-lead-highlight" id="hero-subtitle"></p>
@@ -608,12 +655,12 @@
     </div>
   </section>
 
-  <!-- CARDS DESTACADOS / VISÃO & PRÁTICA -->
+  <!-- CARDS INTRODUTÓRIOS -->
   <section class="cards-section">
     <div class="intro-grid" id="intro-cards"></div>
   </section>
 
-  <!-- TIMELINE ARTÍSTICA -->
+  <!-- TIMELINE ARTÍSTICA COM CIDADE E BOTÃO SAIBA MAIS -->
   <section class="section-wrap" id="timeline">
     <h2 class="section-title" id="timeline-title"></h2>
     <div class="timeline" id="timeline-container"></div>
@@ -625,7 +672,7 @@
     <div class="gallery-grid" id="gallery-container"></div>
   </section>
 
-  <!-- RODAPÉ & CONTATO -->
+  <!-- FOOTER -->
   <footer id="contact">
     <div class="footer-title" id="footer-title">Dormenique</div>
     <div class="footer-copy" id="footer-copy"></div>
@@ -658,17 +705,17 @@
       if (!data) return;
       const langData = data[currentLang];
 
-      // Menu de Navegação
+      // Menu
       document.getElementById('nav-about').innerText = langData.nav.about;
       document.getElementById('nav-timeline').innerText = langData.nav.timeline;
       document.getElementById('nav-works').innerText = langData.nav.works;
       document.getElementById('nav-contact').innerText = langData.nav.contact;
 
-      // Foto de Perfil & Selo
+      // Foto & Selo
       document.getElementById('hero-img').src = data.profile_image;
       document.getElementById('badge-text').innerText = langData.hero.badge;
 
-      // Textos da Hero (Bio & Títulos)
+      // Hero
       document.getElementById('hero-title').innerText = langData.hero.title;
       document.getElementById('hero-subtitle').innerText = langData.hero.subtitle;
       
@@ -679,11 +726,11 @@
       ctaEl.innerText = langData.hero.cta_text;
       ctaEl.href = langData.hero.cta_link;
 
-      // Ticker Marquee
+      // Ticker
       const tickerEl = document.getElementById('ticker-text');
       tickerEl.innerText = (langData.ticker + ' ').repeat(4);
 
-      // Cards Introdutórios
+      // Intro Cards
       const introContainer = document.getElementById('intro-cards');
       introContainer.innerHTML = langData.intro_cards.map(c => `
         <article class="retro-card">
@@ -693,14 +740,22 @@
         </article>
       `).join('');
 
-      // Timeline
+      // Timeline Render (Ano + Cidade + Título + Texto + Botão Saiba Mais)
       document.getElementById('timeline-title').innerText = langData.timeline_title;
       const timelineContainer = document.getElementById('timeline-container');
+      const learnMoreLabel = langData.learn_more || (currentLang === 'pt' ? 'Saiba mais ↗' : 'Learn more ↗');
+
       timelineContainer.innerHTML = langData.timeline.map(t => `
         <div class="timeline-item">
-          <span class="timeline-year">${t.year}</span>
+          <div class="timeline-header-meta">
+            <span class="timeline-year">${t.year}</span>
+            ${t.city ? `<span class="timeline-city">📍 ${t.city}</span>` : ''}
+          </div>
           <h4 class="timeline-heading">${t.title}</h4>
           <p class="timeline-text">${t.text}</p>
+          <a href="${t.link || '#'}" class="timeline-btn-more">
+            ${learnMoreLabel}
+          </a>
         </div>
       `).join('');
 
@@ -725,8 +780,7 @@
       document.getElementById('footer-copy').innerText = langData.footer_copy;
     }
 
-    // Fallback completo caso o arquivo seja aberto diretamente via file://
-    const FALLBACK_DATA = {"profile_image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80", "pt": {"nav": {"about": "Sobre", "timeline": "Trajetória", "works": "Obras", "contact": "Contato"}, "ticker": "DORMENIQUE ✦ ARTES VISUAIS ✦ ILUSTRAÇÃO ✦ DESIGN ✦ PORTFOLIO & ARQUIVO ✦ ", "hero": {"badge": "HELLO & WELCOME", "title": "Olá, sou a Dormenique", "subtitle": "Artista visual e criadora com foco em processos manuais e narrativas visuais.", "paragraphs": ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.", "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.", "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."], "cta_text": "entrar em contato para trabalhos ↗", "cta_link": "#contact"}, "timeline_title": "Trajetória Artística", "gallery_title": "Obras & Projetos", "intro_cards": [{"label": "Processo", "title": "Visão & Prática", "desc": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."}, {"label": "Técnicas", "title": "Manual & Analógico", "desc": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."}, {"label": "Explorações", "title": "Cor & Forma", "desc": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam."}], "timeline": [{"year": "2026", "title": "Lorem Ipsum Dolor", "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam."}, {"year": "2024 — 2025", "title": "Consectetur Adipiscing", "text": "Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper."}, {"year": "2022 — 2023", "title": "Tempor Incididunt", "text": "Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra."}, {"year": "2019 — 2021", "title": "Magna Aliqua", "text": "Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh."}], "footer_title": "Dormenique", "footer_copy": "© 2026 Dormenique. Todos os direitos reservados."}, "en": {"nav": {"about": "About", "timeline": "Timeline", "works": "Works", "contact": "Contact"}, "ticker": "DORMENIQUE ✦ VISUAL ARTS ✦ ILLUSTRATION ✦ DESIGN ✦ PORTFOLIO & ARCHIVE ✦ ", "hero": {"badge": "HELLO & WELCOME", "title": "I'm Dormenique", "subtitle": "Visual artist and creator focused on tactile processes and thoughtful visual storytelling.", "paragraphs": ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.", "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.", "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."], "cta_text": "enquire about working together ↗", "cta_link": "#contact"}, "timeline_title": "Artistic Journey", "gallery_title": "Selected Works", "intro_cards": [{"label": "Process", "title": "Vision & Practice", "desc": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."}, {"label": "Techniques", "title": "Tactile & Analog", "desc": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."}, {"label": "Explorations", "title": "Color & Form", "desc": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam."}], "timeline": [{"year": "2026", "title": "Lorem Ipsum Dolor", "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam."}, {"year": "2024 — 2025", "title": "Consectetur Adipiscing", "text": "Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper."}, {"year": "2022 — 2023", "title": "Tempor Incididunt", "text": "Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra."}, {"year": "2019 — 2021", "title": "Magna Aliqua", "text": "Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh."}], "footer_title": "Dormenique", "footer_copy": "© 2026 Dormenique. All rights reserved."}, "gallery": [{"id": 1, "image": "https://picsum.photos/seed/art1/600/500", "tag": {"pt": "Pintura / Técnica Mista", "en": "Painting / Mixed Media"}, "title": {"pt": "Lorem Ipsum Obra 01", "en": "Lorem Ipsum Piece 01"}, "desc": {"pt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."}}, {"id": 2, "image": "https://picsum.photos/seed/art2/600/500", "tag": {"pt": "Ilustração", "en": "Illustration"}, "title": {"pt": "Lorem Ipsum Obra 02", "en": "Lorem Ipsum Piece 02"}, "desc": {"pt": "Sed do eiusmod tempor incididunt ut labore et dolore.", "en": "Sed do eiusmod tempor incididunt ut labore et dolore."}}, {"id": 3, "image": "https://picsum.photos/seed/art3/600/500", "tag": {"pt": "Cadernos & Colagem", "en": "Sketchbook & Collage"}, "title": {"pt": "Lorem Ipsum Obra 03", "en": "Lorem Ipsum Piece 03"}, "desc": {"pt": "Ut enim ad minim veniam, quis nostrud exercitation.", "en": "Ut enim ad minim veniam, quis nostrud exercitation."}}, {"id": 4, "image": "https://picsum.photos/seed/art4/600/500", "tag": {"pt": "Lettering & Tipografia", "en": "Lettering & Typography"}, "title": {"pt": "Lorem Ipsum Obra 04", "en": "Lorem Ipsum Piece 04"}, "desc": {"pt": "Duis aute irure dolor in reprehenderit in voluptate velit.", "en": "Duis aute irure dolor in reprehenderit in voluptate velit."}}, {"id": 5, "image": "https://picsum.photos/seed/art5/600/500", "tag": {"pt": "Projeto Editorial", "en": "Editorial Project"}, "title": {"pt": "Lorem Ipsum Obra 05", "en": "Lorem Ipsum Piece 05"}, "desc": {"pt": "Excepteur sint occaecat cupidatat non proident.", "en": "Excepteur sint occaecat cupidatat non proident."}}, {"id": 6, "image": "https://picsum.photos/seed/art6/600/500", "tag": {"pt": "Estudo de Cor", "en": "Color Study"}, "title": {"pt": "Lorem Ipsum Obra 06", "en": "Lorem Ipsum Piece 06"}, "desc": {"pt": "Sunt in culpa qui officia deserunt mollit anim id est laborum.", "en": "Sunt in culpa qui officia deserunt mollit anim id est laborum."}}]};
+    const FALLBACK_DATA = {"profile_image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80", "pt": {"nav": {"about": "Sobre", "timeline": "Trajetória", "works": "Obras", "contact": "Contato"}, "ticker": "DORMENIQUE ✦ ARTES VISUAIS ✦ ILUSTRAÇÃO ✦ DESIGN ✦ PORTFOLIO & ARQUIVO ✦ ", "hero": {"badge": "HELLO & WELCOME", "title": "Olá, eu sou a Dormenique", "subtitle": "Artista visual e criadora com foco em processos manuais e narrativas visuais.", "paragraphs": ["Desde 1997 eu sou artista. Já de pequena eu estudava desenho, pintava quadros e passava horas modelando em biscuit em casa com minha mãe. ", "Formada professora de artes pela Faculdade Paulista de Artes em São Paulo/SP, sou especialista em Hand Lettering e lecionei de forma independente no Brasil, em parcerias com gigantes como Papelaria Universitária, SESC e Casa das Letras."], "cta_text": "entrar em contacto ↗", "cta_link": "#contact"}, "timeline_title": "Trajetória Artística", "learn_more": "Saiba mais ↗", "gallery_title": "Obras & Projetos", "intro_cards": [{"label": "Processo", "title": "Visão & Prática", "desc": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."}, {"label": "Técnicas", "title": "Manual & Analógico", "desc": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."}, {"label": "Explorações", "title": "Cor & Forma", "desc": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam."}], "timeline": [{"year": "2026", "city": "Lisboa - Portugal", "title": "Quieto Space", "text": "A criação do Quieto vem da necessidade de explorar o manual. Trabalhos feitos à mão sempre fizeram parte da minha trajetória e em 2026 mais do que nunca a inteligência artificial e o digital estão fortemente presentes no nosso dia a dia. O Quieto é um projeto de aulas para iniciantes que incentiva e desafia cada um de nós a reservar um tempo fora dos ecrãs para criar peças manualmente. Sem pressão, sem importância estética: somente o aluno e os materiais, dando vida a algo novo.", "link": "#"}, {"year": "2023 — 2026", "city": "Lisboa - Portugal", "title": "Criação Contínua", "text": "Nunca parei de criar. Mesmo ao trabalhar em outras áreas, a arte sempre é parte da minha vida. Desde pintura manual, colagem, até projetos de costura.", "link": "#"}, {"year": "2020 — 2022", "city": "Lisboa - Portugal", "title": "Freelance Designer", "text": "Pude colaborar com trabalhos de design, desenvolvendo identidades visuais para marcas e podcasts de grande público. Aplicando minhas habilidades de lettering e teoria das cores.", "link": "#"}, {"year": "2017 — 2020", "city": "São Paulo - SP - Brasil", "title": "Professora de Hand Lettering", "text": "Sou especialista em Hand Lettering e lecionei de forma independente no Brasil, em parcerias com gigantes como Papelaria Universitária, SESC e Casa das Letras. Também pude lecionar para turmas particulares e exclusivas.", "link": "#"}], "footer_title": "Dormenique", "footer_copy": "© 2026 Dormenique. Todos os direitos reservados."}, "en": {"nav": {"about": "About", "timeline": "Timeline", "works": "Works", "contact": "Contact"}, "ticker": "DORMENIQUE ✦ VISUAL ARTS ✦ ILLUSTRATION ✦ DESIGN ✦ PORTFOLIO & ARCHIVE ✦ ", "hero": {"badge": "HELLO & WELCOME", "title": "I'm Dormenique", "subtitle": "Visual artist and creator focused on tactile processes and thoughtful visual storytelling.", "paragraphs": ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.", "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia."], "cta_text": "enquire about working together ↗", "cta_link": "#contact"}, "timeline_title": "Artistic Journey", "learn_more": "Learn more ↗", "gallery_title": "Selected Works", "intro_cards": [{"label": "Process", "title": "Vision & Practice", "desc": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."}, {"label": "Techniques", "title": "Tactile & Analog", "desc": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."}, {"label": "Explorations", "title": "Color & Form", "desc": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam."}], "timeline": [{"year": "2026", "city": "Lisbon - Portugal", "title": "Quieto Space", "text": "The creation of Quieto stems from the need to explore tactile, handmade arts. Quieto is a project of workshops designed for beginners, challenging us to step away from screens and create with our own hands without pressure or perfection.", "link": "#"}, {"year": "2023 — 2026", "city": "Lisbon - Portugal", "title": "Continuous Creation", "text": "Never stopped creating. Hand painting, collage, sewing, and mixed-media projects remained a core part of my everyday life alongside professional endeavors.", "link": "#"}, {"year": "2020 — 2022", "city": "Lisbon - Portugal", "title": "Freelance Designer", "text": "Collaborated with brand identity projects, visual systems for prominent podcasts and independent creators, leveraging lettering skills and color theory.", "link": "#"}, {"year": "2017 — 2020", "city": "São Paulo - SP - Brazil", "title": "Hand Lettering Educator", "text": "Specialized in hand lettering instruction across Brazil, partnering with institutions like Papelaria Universitária, SESC, and Casa das Letras, in addition to leading private workshops.", "link": "#"}], "footer_title": "Dormenique", "footer_copy": "© 2026 Dormenique. All rights reserved."}, "gallery": [{"id": 1, "image": "https://picsum.photos/seed/art1/600/500", "tag": {"pt": "Pintura / Técnica Mista", "en": "Painting / Mixed Media"}, "title": {"pt": "Lorem Ipsum Obra 01", "en": "Lorem Ipsum Piece 01"}, "desc": {"pt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."}}, {"id": 2, "image": "https://picsum.photos/seed/art2/600/500", "tag": {"pt": "Ilustração", "en": "Illustration"}, "title": {"pt": "Lorem Ipsum Obra 02", "en": "Lorem Ipsum Piece 02"}, "desc": {"pt": "Sed do eiusmod tempor incididunt ut labore et dolore.", "en": "Sed do eiusmod tempor incididunt ut labore et dolore."}}, {"id": 3, "image": "https://picsum.photos/seed/art3/600/500", "tag": {"pt": "Cadernos & Colagem", "en": "Sketchbook & Collage"}, "title": {"pt": "Lorem Ipsum Obra 03", "en": "Lorem Ipsum Piece 03"}, "desc": {"pt": "Ut enim ad minim veniam, quis nostrud exercitation.", "en": "Ut enim ad minim veniam, quis nostrud exercitation."}}, {"id": 4, "image": "https://picsum.photos/seed/art4/600/500", "tag": {"pt": "Lettering & Tipografia", "en": "Lettering & Typography"}, "title": {"pt": "Lorem Ipsum Obra 04", "en": "Lorem Ipsum Piece 04"}, "desc": {"pt": "Duis aute irure dolor in reprehenderit in voluptate velit.", "en": "Duis aute irure dolor in reprehenderit in voluptate velit."}}, {"id": 5, "image": "https://picsum.photos/seed/art5/600/500", "tag": {"pt": "Projeto Editorial", "en": "Editorial Project"}, "title": {"pt": "Lorem Ipsum Obra 05", "en": "Lorem Ipsum Piece 05"}, "desc": {"pt": "Excepteur sint occaecat cupidatat non proident.", "en": "Excepteur sint occaecat cupidatat non proident."}}, {"id": 6, "image": "https://picsum.photos/seed/art6/600/500", "tag": {"pt": "Estudo de Cor", "en": "Color Study"}, "title": {"pt": "Lorem Ipsum Obra 06", "en": "Lorem Ipsum Piece 06"}, "desc": {"pt": "Sunt in culpa qui officia deserunt mollit anim id est laborum.", "en": "Sunt in culpa qui officia deserunt mollit anim id est laborum."}}]};
 
     document.addEventListener('DOMContentLoaded', init);
   </script>
