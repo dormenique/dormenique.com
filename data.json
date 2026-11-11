@@ -1,24 +1,42 @@
 {
+  "profile_image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80",
   "pt": {
+    "nav": {
+      "about": "Sobre",
+      "timeline": "Trajetória",
+      "works": "Obras",
+      "contact": "Contato"
+    },
     "ticker": "DORMENIQUE ✦ ARTES VISUAIS ✦ ILUSTRAÇÃO ✦ DESIGN ✦ PORTFOLIO & ARQUIVO ✦ ",
-    "hero_lead": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "hero": {
+      "badge": "HELLO & WELCOME",
+      "title": "Olá, sou a Dormenique",
+      "subtitle": "Artista visual e criadora com foco em processos manuais e narrativas visuais.",
+      "paragraphs": [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
+        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.",
+        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."
+      ],
+      "cta_text": "entrar em contato para trabalhos ↗",
+      "cta_link": "#contact"
+    },
     "timeline_title": "Trajetória Artística",
     "gallery_title": "Obras & Projetos",
     "intro_cards": [
       {
-        "label": "Lorem Ipsum",
-        "title": "Sobre Mim",
-        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-      },
-      {
         "label": "Processo",
         "title": "Visão & Prática",
-        "desc": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident."
+        "desc": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
       },
       {
-        "label": "Contato",
-        "title": "Vamos Conversar",
-        "desc": "Sunt in culpa qui officia deserunt mollit anim id est laborum. Entre em contato para parcerias, encomendas ou projetos independentes."
+        "label": "Técnicas",
+        "title": "Manual & Analógico",
+        "desc": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      },
+      {
+        "label": "Explorações",
+        "title": "Cor & Forma",
+        "desc": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam."
       }
     ],
     "timeline": [
@@ -35,37 +53,54 @@
       {
         "year": "2022 — 2023",
         "title": "Tempor Incididunt",
-        "text": "Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
+        "text": "Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra."
       },
       {
         "year": "2019 — 2021",
         "title": "Magna Aliqua",
-        "text": "Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam."
+        "text": "Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh."
       }
     ],
     "footer_title": "Dormenique",
     "footer_copy": "© 2026 Dormenique. Todos os direitos reservados."
   },
   "en": {
+    "nav": {
+      "about": "About",
+      "timeline": "Timeline",
+      "works": "Works",
+      "contact": "Contact"
+    },
     "ticker": "DORMENIQUE ✦ VISUAL ARTS ✦ ILLUSTRATION ✦ DESIGN ✦ PORTFOLIO & ARCHIVE ✦ ",
-    "hero_lead": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "hero": {
+      "badge": "HELLO & WELCOME",
+      "title": "I'm Dormenique",
+      "subtitle": "Visual artist and creator focused on tactile processes and thoughtful visual storytelling.",
+      "paragraphs": [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
+        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.",
+        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."
+      ],
+      "cta_text": "enquire about working together ↗",
+      "cta_link": "#contact"
+    },
     "timeline_title": "Artistic Journey",
     "gallery_title": "Selected Works",
     "intro_cards": [
       {
-        "label": "Lorem Ipsum",
-        "title": "About Me",
-        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-      },
-      {
         "label": "Process",
         "title": "Vision & Practice",
-        "desc": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident."
+        "desc": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
       },
       {
-        "label": "Contact",
-        "title": "Get In Touch",
-        "desc": "Sunt in culpa qui officia deserunt mollit anim id est laborum. Reach out for collaborations, commissions, or independent creative inquiries."
+        "label": "Techniques",
+        "title": "Tactile & Analog",
+        "desc": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      },
+      {
+        "label": "Explorations",
+        "title": "Color & Form",
+        "desc": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam."
       }
     ],
     "timeline": [
@@ -82,12 +117,12 @@
       {
         "year": "2022 — 2023",
         "title": "Tempor Incididunt",
-        "text": "Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
+        "text": "Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra."
       },
       {
         "year": "2019 — 2021",
         "title": "Magna Aliqua",
-        "text": "Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam."
+        "text": "Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh."
       }
     ],
     "footer_title": "Dormenique",
