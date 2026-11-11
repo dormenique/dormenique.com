@@ -361,7 +361,7 @@
     }
 
     /* =========================================================
-       TIMELINE COM CIDADE E BOTÃO "SAIBA MAIS"
+       TIMELINE COM ABAS (PRÁTICA ARTÍSTICA / EDUCAÇÃO)
        ========================================================= */
     .section-wrap {
       max-width: 1080px;
@@ -369,15 +369,52 @@
       padding: 5rem 1.5rem;
     }
 
+    .timeline-top-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
     .section-title {
       font-family: var(--font-display);
       font-size: 2.4rem;
       font-weight: 900;
       color: var(--red-1);
-      margin-bottom: 2.5rem;
       text-transform: uppercase;
       border-left: 6px solid var(--yellow-2);
       padding-left: 1rem;
+      margin-bottom: 0;
+    }
+
+    /* Seletor de Abas (Tabs) */
+    .timeline-tabs {
+      display: inline-flex;
+      background: var(--white);
+      border: 2px solid var(--border-dark);
+      border-radius: 999px;
+      padding: 4px;
+      box-shadow: 3px 3px 0px var(--border-dark);
+    }
+
+    .timeline-tab-btn {
+      background: transparent;
+      border: none;
+      padding: 0.5rem 1.25rem;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      border-radius: 999px;
+      color: var(--black);
+      transition: all 0.2s ease;
+    }
+
+    .timeline-tab-btn.active {
+      background: var(--purple-1);
+      color: var(--white);
     }
 
     .timeline {
@@ -390,6 +427,12 @@
     .timeline-item {
       position: relative;
       margin-bottom: 3.5rem;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .timeline-item::before {
@@ -442,6 +485,19 @@
       font-size: 0.78rem;
     }
 
+    .timeline-institution {
+      font-family: var(--font-mono);
+      background: var(--yellow-4);
+      color: var(--yellow-1);
+      border: 1.5px solid var(--border-dark);
+      display: inline-flex;
+      align-items: center;
+      padding: 0.18rem 0.65rem;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.78rem;
+    }
+
     .timeline-heading {
       font-family: var(--font-display);
       font-size: 1.35rem;
@@ -457,7 +513,6 @@
       margin-bottom: 1rem;
     }
 
-    /* Botão Saiba Mais / Portfolio da Era */
     .timeline-btn-more {
       display: inline-flex;
       align-items: center;
@@ -597,8 +652,9 @@
         text-align: center;
         align-items: center;
       }
-      .timeline-header-meta {
-        justify-content: flex-start;
+      .timeline-top-bar {
+        flex-direction: column;
+        align-items: flex-start;
       }
     }
   </style>
@@ -660,9 +716,18 @@
     <div class="intro-grid" id="intro-cards"></div>
   </section>
 
-  <!-- TIMELINE ARTÍSTICA COM CIDADE E BOTÃO SAIBA MAIS -->
+  <!-- TIMELINE ARTÍSTICA COM ABAS DE FORMAÇÃO -->
   <section class="section-wrap" id="timeline">
-    <h2 class="section-title" id="timeline-title"></h2>
+    <div class="timeline-top-bar">
+      <h2 class="section-title" id="timeline-title"></h2>
+      
+      <!-- Seletor de Abas -->
+      <div class="timeline-tabs">
+        <button class="timeline-tab-btn active" id="tab-artistic" onclick="setTimelineTab('artistic')"></button>
+        <button class="timeline-tab-btn" id="tab-education" onclick="setTimelineTab('education')"></button>
+      </div>
+    </div>
+
     <div class="timeline" id="timeline-container"></div>
   </section>
 
@@ -680,6 +745,7 @@
 
   <script>
     let currentLang = 'pt';
+    let currentTimelineTab = 'artistic';
     let data = null;
 
     async function init() {
@@ -699,6 +765,39 @@
       document.getElementById('btn-pt').classList.toggle('active', lang === 'pt');
       document.getElementById('btn-en').classList.toggle('active', lang === 'en');
       render();
+    }
+
+    function setTimelineTab(tab) {
+      currentTimelineTab = tab;
+      document.getElementById('tab-artistic').classList.toggle('active', tab === 'artistic');
+      document.getElementById('tab-education').classList.toggle('active', tab === 'education');
+      renderTimeline();
+    }
+
+    function renderTimeline() {
+      if (!data) return;
+      const langData = data[currentLang];
+      const timelineContainer = document.getElementById('timeline-container');
+      const learnMoreLabel = langData.learn_more || (currentLang === 'pt' ? 'Saiba mais ↗' : 'Learn more ↗');
+
+      const items = currentTimelineTab === 'artistic' 
+        ? langData.timeline 
+        : (langData.education || []);
+
+      timelineContainer.innerHTML = items.map(t => `
+        <div class="timeline-item">
+          <div class="timeline-header-meta">
+            <span class="timeline-year">${t.year}</span>
+            ${t.city ? `<span class="timeline-city">📍 ${t.city}</span>` : ''}
+            ${t.institution ? `<span class="timeline-institution">🏛 ${t.institution}</span>` : ''}
+          </div>
+          <h4 class="timeline-heading">${t.title}</h4>
+          <p class="timeline-text">${t.text}</p>
+          <a href="${t.link || '#'}" class="timeline-btn-more">
+            ${learnMoreLabel}
+          </a>
+        </div>
+      `).join('');
     }
 
     function render() {
@@ -740,24 +839,11 @@
         </article>
       `).join('');
 
-      // Timeline Render (Ano + Cidade + Título + Texto + Botão Saiba Mais)
+      // Timeline Cabeçalho e Abas
       document.getElementById('timeline-title').innerText = langData.timeline_title;
-      const timelineContainer = document.getElementById('timeline-container');
-      const learnMoreLabel = langData.learn_more || (currentLang === 'pt' ? 'Saiba mais ↗' : 'Learn more ↗');
-
-      timelineContainer.innerHTML = langData.timeline.map(t => `
-        <div class="timeline-item">
-          <div class="timeline-header-meta">
-            <span class="timeline-year">${t.year}</span>
-            ${t.city ? `<span class="timeline-city">📍 ${t.city}</span>` : ''}
-          </div>
-          <h4 class="timeline-heading">${t.title}</h4>
-          <p class="timeline-text">${t.text}</p>
-          <a href="${t.link || '#'}" class="timeline-btn-more">
-            ${learnMoreLabel}
-          </a>
-        </div>
-      `).join('');
+      document.getElementById('tab-artistic').innerText = langData.timeline_tabs?.artistic || 'Prática Artística';
+      document.getElementById('tab-education').innerText = langData.timeline_tabs?.education || 'Formação & Estudos';
+      renderTimeline();
 
       // Galeria
       document.getElementById('gallery-title').innerText = langData.gallery_title;
@@ -780,7 +866,7 @@
       document.getElementById('footer-copy').innerText = langData.footer_copy;
     }
 
-    const FALLBACK_DATA = {"profile_image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80", "pt": {"nav": {"about": "Sobre", "timeline": "Trajetória", "works": "Obras", "contact": "Contato"}, "ticker": "DORMENIQUE ✦ ARTES VISUAIS ✦ ILUSTRAÇÃO ✦ DESIGN ✦ PORTFOLIO & ARQUIVO ✦ ", "hero": {"badge": "HELLO & WELCOME", "title": "Olá, eu sou a Dormenique", "subtitle": "Artista visual e criadora com foco em processos manuais e narrativas visuais.", "paragraphs": ["Desde 1997 eu sou artista. Já de pequena eu estudava desenho, pintava quadros e passava horas modelando em biscuit em casa com minha mãe. ", "Formada professora de artes pela Faculdade Paulista de Artes em São Paulo/SP, sou especialista em Hand Lettering e lecionei de forma independente no Brasil, em parcerias com gigantes como Papelaria Universitária, SESC e Casa das Letras."], "cta_text": "entrar em contacto ↗", "cta_link": "#contact"}, "timeline_title": "Trajetória Artística", "learn_more": "Saiba mais ↗", "gallery_title": "Obras & Projetos", "intro_cards": [{"label": "Processo", "title": "Visão & Prática", "desc": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."}, {"label": "Técnicas", "title": "Manual & Analógico", "desc": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."}, {"label": "Explorações", "title": "Cor & Forma", "desc": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam."}], "timeline": [{"year": "2026", "city": "Lisboa - Portugal", "title": "Quieto Space", "text": "A criação do Quieto vem da necessidade de explorar o manual. Trabalhos feitos à mão sempre fizeram parte da minha trajetória e em 2026 mais do que nunca a inteligência artificial e o digital estão fortemente presentes no nosso dia a dia. O Quieto é um projeto de aulas para iniciantes que incentiva e desafia cada um de nós a reservar um tempo fora dos ecrãs para criar peças manualmente. Sem pressão, sem importância estética: somente o aluno e os materiais, dando vida a algo novo.", "link": "#"}, {"year": "2023 — 2026", "city": "Lisboa - Portugal", "title": "Criação Contínua", "text": "Nunca parei de criar. Mesmo ao trabalhar em outras áreas, a arte sempre é parte da minha vida. Desde pintura manual, colagem, até projetos de costura.", "link": "#"}, {"year": "2020 — 2022", "city": "Lisboa - Portugal", "title": "Freelance Designer", "text": "Pude colaborar com trabalhos de design, desenvolvendo identidades visuais para marcas e podcasts de grande público. Aplicando minhas habilidades de lettering e teoria das cores.", "link": "#"}, {"year": "2017 — 2020", "city": "São Paulo - SP - Brasil", "title": "Professora de Hand Lettering", "text": "Sou especialista em Hand Lettering e lecionei de forma independente no Brasil, em parcerias com gigantes como Papelaria Universitária, SESC e Casa das Letras. Também pude lecionar para turmas particulares e exclusivas.", "link": "#"}], "footer_title": "Dormenique", "footer_copy": "© 2026 Dormenique. Todos os direitos reservados."}, "en": {"nav": {"about": "About", "timeline": "Timeline", "works": "Works", "contact": "Contact"}, "ticker": "DORMENIQUE ✦ VISUAL ARTS ✦ ILLUSTRATION ✦ DESIGN ✦ PORTFOLIO & ARCHIVE ✦ ", "hero": {"badge": "HELLO & WELCOME", "title": "I'm Dormenique", "subtitle": "Visual artist and creator focused on tactile processes and thoughtful visual storytelling.", "paragraphs": ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.", "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia."], "cta_text": "enquire about working together ↗", "cta_link": "#contact"}, "timeline_title": "Artistic Journey", "learn_more": "Learn more ↗", "gallery_title": "Selected Works", "intro_cards": [{"label": "Process", "title": "Vision & Practice", "desc": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."}, {"label": "Techniques", "title": "Tactile & Analog", "desc": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."}, {"label": "Explorations", "title": "Color & Form", "desc": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam."}], "timeline": [{"year": "2026", "city": "Lisbon - Portugal", "title": "Quieto Space", "text": "The creation of Quieto stems from the need to explore tactile, handmade arts. Quieto is a project of workshops designed for beginners, challenging us to step away from screens and create with our own hands without pressure or perfection.", "link": "#"}, {"year": "2023 — 2026", "city": "Lisbon - Portugal", "title": "Continuous Creation", "text": "Never stopped creating. Hand painting, collage, sewing, and mixed-media projects remained a core part of my everyday life alongside professional endeavors.", "link": "#"}, {"year": "2020 — 2022", "city": "Lisbon - Portugal", "title": "Freelance Designer", "text": "Collaborated with brand identity projects, visual systems for prominent podcasts and independent creators, leveraging lettering skills and color theory.", "link": "#"}, {"year": "2017 — 2020", "city": "São Paulo - SP - Brazil", "title": "Hand Lettering Educator", "text": "Specialized in hand lettering instruction across Brazil, partnering with institutions like Papelaria Universitária, SESC, and Casa das Letras, in addition to leading private workshops.", "link": "#"}], "footer_title": "Dormenique", "footer_copy": "© 2026 Dormenique. All rights reserved."}, "gallery": [{"id": 1, "image": "https://picsum.photos/seed/art1/600/500", "tag": {"pt": "Pintura / Técnica Mista", "en": "Painting / Mixed Media"}, "title": {"pt": "Lorem Ipsum Obra 01", "en": "Lorem Ipsum Piece 01"}, "desc": {"pt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."}}, {"id": 2, "image": "https://picsum.photos/seed/art2/600/500", "tag": {"pt": "Ilustração", "en": "Illustration"}, "title": {"pt": "Lorem Ipsum Obra 02", "en": "Lorem Ipsum Piece 02"}, "desc": {"pt": "Sed do eiusmod tempor incididunt ut labore et dolore.", "en": "Sed do eiusmod tempor incididunt ut labore et dolore."}}, {"id": 3, "image": "https://picsum.photos/seed/art3/600/500", "tag": {"pt": "Cadernos & Colagem", "en": "Sketchbook & Collage"}, "title": {"pt": "Lorem Ipsum Obra 03", "en": "Lorem Ipsum Piece 03"}, "desc": {"pt": "Ut enim ad minim veniam, quis nostrud exercitation.", "en": "Ut enim ad minim veniam, quis nostrud exercitation."}}, {"id": 4, "image": "https://picsum.photos/seed/art4/600/500", "tag": {"pt": "Lettering & Tipografia", "en": "Lettering & Typography"}, "title": {"pt": "Lorem Ipsum Obra 04", "en": "Lorem Ipsum Piece 04"}, "desc": {"pt": "Duis aute irure dolor in reprehenderit in voluptate velit.", "en": "Duis aute irure dolor in reprehenderit in voluptate velit."}}, {"id": 5, "image": "https://picsum.photos/seed/art5/600/500", "tag": {"pt": "Projeto Editorial", "en": "Editorial Project"}, "title": {"pt": "Lorem Ipsum Obra 05", "en": "Lorem Ipsum Piece 05"}, "desc": {"pt": "Excepteur sint occaecat cupidatat non proident.", "en": "Excepteur sint occaecat cupidatat non proident."}}, {"id": 6, "image": "https://picsum.photos/seed/art6/600/500", "tag": {"pt": "Estudo de Cor", "en": "Color Study"}, "title": {"pt": "Lorem Ipsum Obra 06", "en": "Lorem Ipsum Piece 06"}, "desc": {"pt": "Sunt in culpa qui officia deserunt mollit anim id est laborum.", "en": "Sunt in culpa qui officia deserunt mollit anim id est laborum."}}]};
+    const FALLBACK_DATA = {"profile_image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80", "pt": {"nav": {"about": "Sobre", "timeline": "Trajetória", "works": "Obras", "contact": "Contato"}, "ticker": "DORMENIQUE ✦ ARTES VISUAIS ✦ ILUSTRAÇÃO ✦ DESIGN ✦ PORTFOLIO & ARQUIVO ✦ ", "hero": {"badge": "HELLO & WELCOME", "title": "Olá, eu sou a Dormenique", "subtitle": "Artista visual e criadora com foco em processos manuais e narrativas visuais.", "paragraphs": ["Desde 1997 eu sou artista. Já de pequena eu estudava desenho, pintava quadros e passava horas modelando em biscuit em casa com minha mãe.", "Formada professora de artes pela Faculdade Paulista de Artes em São Paulo/SP, sou especialista em Hand Lettering e lecionei de forma independente no Brasil, em parcerias com gigantes como Papelaria Universitária, SESC e Casa das Letras."], "cta_text": "entrar em contacto ↗", "cta_link": "#contact"}, "timeline_title": "Trajetória", "timeline_tabs": {"artistic": "Prática Artística", "education": "Formação & Estudos"}, "learn_more": "Saiba mais ↗", "gallery_title": "Obras & Projetos", "intro_cards": [{"label": "Processo", "title": "Visão & Prática", "desc": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."}, {"label": "Técnicas", "title": "Manual & Analógico", "desc": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."}, {"label": "Explorações", "title": "Cor & Forma", "desc": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam."}], "timeline": [{"year": "2026", "city": "Lisboa - Portugal", "title": "Quieto Space", "text": "A criação do Quieto vem da necessidade de explorar o manual. Trabalhos feitos à mão sempre fizeram parte da minha trajetória e em 2026 mais do que nunca a inteligência artificial e o digital estão fortemente presentes no nosso dia a dia. O Quieto é um projeto de aulas para iniciantes que incentiva e desafia cada um de nós a reservar um tempo fora dos ecrãs para criar peças manualmente. Sem pressão, sem importância estética: somente o aluno e os materiais, dando vida a algo novo.", "link": "#"}, {"year": "2023 — 2026", "city": "Lisboa - Portugal", "title": "Criação Contínua", "text": "Nunca parei de criar. Mesmo ao trabalhar em outras áreas, a arte sempre é parte da minha vida. Desde pintura manual, colagem, até projetos de costura.", "link": "#"}, {"year": "2020 — 2022", "city": "Lisboa - Portugal", "title": "Freelance Designer", "text": "Pude colaborar com trabalhos de design, desenvolvendo identidades visuais para marcas e podcasts de grande público. Aplicando minhas habilidades de lettering e teoria das cores.", "link": "#"}, {"year": "2017 — 2020", "city": "São Paulo - SP - Brasil", "title": "Professora de Hand Lettering", "text": "Sou especialista em Hand Lettering e lecionei de forma independente no Brasil, em parcerias com gigantes como Papelaria Universitária, SESC e Casa das Letras. Também pude lecionar para turmas particulares e exclusivas.", "link": "#"}], "education": [{"year": "Graduação", "city": "São Paulo - SP - Brasil", "title": "Licenciatura em Artes Visuais", "institution": "Faculdade Paulista de Artes (FPA)", "text": "Formação pedagógica e prática artística com ênfase em história da arte, didática do ensino visual, expressão plástica, desenho e teorias do processo criativo.", "link": "#"}, {"year": "Especialização", "city": "São Paulo - SP - Brasil", "title": "Hand Lettering & Caligrafia Moderna", "institution": "Estudos Independentes & Oficinas Livres", "text": "Pesquisa e aprofundamento contínuo em tipografia expressiva, anatomia das letras, composição de alfabetos manuais e técnicas com brush pen e pena.", "link": "#"}, {"year": "Formação Contínua", "city": "Lisboa - Portugal", "title": "Processos Manuais, Colagem & Encadernação", "institution": "Pesquisa Autoral de Atelier", "text": "Imersão em técnicas analógicas, encadernação artesanal, modelagem e exploração de materiais não convencionais para projetos pedagógicos e autorais.", "link": "#"}], "footer_title": "Dormenique", "footer_copy": "© 2026 Dormenique. Todos os direitos reservados."}, "en": {"nav": {"about": "About", "timeline": "Journey", "works": "Works", "contact": "Contact"}, "ticker": "DORMENIQUE ✦ VISUAL ARTS ✦ ILLUSTRATION ✦ DESIGN ✦ PORTFOLIO & ARCHIVE ✦ ", "hero": {"badge": "HELLO & WELCOME", "title": "Hi, I'm Dormenique", "subtitle": "Visual artist and creator focused on tactile processes and thoughtful visual storytelling.", "paragraphs": ["I have been an artist since 1997. Since childhood, I was drawing, painting canvases, and spending hours sculpting cold porcelain clay at home with my mother.", "Graduated in Art Education from Faculdade Paulista de Artes in São Paulo, Brazil, I specialize in Hand Lettering and taught independently across Brazil in partnership with major institutions such as Papelaria Universitária, SESC, and Casa das Letras."], "cta_text": "get in touch ↗", "cta_link": "#contact"}, "timeline_title": "Journey", "timeline_tabs": {"artistic": "Artistic Practice", "education": "Education & Studies"}, "learn_more": "Learn more ↗", "gallery_title": "Selected Works", "intro_cards": [{"label": "Process", "title": "Vision & Practice", "desc": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."}, {"label": "Techniques", "title": "Tactile & Analog", "desc": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."}, {"label": "Explorations", "title": "Color & Form", "desc": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam."}], "timeline": [{"year": "2026", "city": "Lisbon - Portugal", "title": "Quieto Space", "text": "The creation of Quieto stems from the need to explore tactile, handmade arts. Handcrafted projects have always defined my artistic path, and in 2026—more than ever—artificial intelligence and digital screens dominate our everyday lives. Quieto is an initiative of workshops for beginners that challenges us to set aside screen-free time to create objects by hand. No pressure, no aesthetic judgment: simply the student, raw materials, and the act of bringing something new to life.", "link": "#"}, {"year": "2023 — 2026", "city": "Lisbon - Portugal", "title": "Continuous Creation", "text": "I never stopped creating. Even while working across different fields, art remains the backbone of my routine—from hand-painting and collage to textile and sewing projects.", "link": "#"}, {"year": "2020 — 2022", "city": "Lisbon - Portugal", "title": "Freelance Designer", "text": "Collaborated with brand identity projects, creating visual systems and cover art for prominent podcasts and independent brands, applying lettering mastery and color theory.", "link": "#"}, {"year": "2017 — 2020", "city": "São Paulo - SP - Brazil", "title": "Hand Lettering Educator", "text": "Specialized in hand lettering instruction, teaching independently across Brazil in partnership with major stationery brands and cultural institutions like SESC, Papelaria Universitária, and Casa das Letras, alongside private workshops.", "link": "#"}], "education": [{"year": "Degree", "city": "São Paulo - SP - Brazil", "title": "BA in Visual Arts & Art Education", "institution": "Faculdade Paulista de Artes (FPA)", "text": "Academic pedagogy and artistic practice covering art history, visual education methodologies, drawing, and creative process theories.", "link": "#"}, {"year": "Specialization", "city": "São Paulo - SP - Brazil", "title": "Hand Lettering & Modern Calligraphy", "institution": "Independent Research & Free Studios", "text": "In-depth study of expressive letterforms, typeface anatomy, layout composition, and analog ink techniques with brush pens and dip pens.", "link": "#"}, {"year": "Continuing Studies", "city": "Lisbon - Portugal", "title": "Analog Crafts, Paper Collage & Bookbinding", "institution": "Studio Research", "text": "Hands-on exploration of tactile materials, handmade bookbinding, and non-digital media tailored for slow living and educational workshops.", "link": "#"}], "footer_title": "Dormenique", "footer_copy": "© 2026 Dormenique. All rights reserved."}, "gallery": [{"id": 1, "image": "https://picsum.photos/seed/art1/600/500", "tag": {"pt": "Pintura / Técnica Mista", "en": "Painting / Mixed Media"}, "title": {"pt": "Lorem Ipsum Obra 01", "en": "Lorem Ipsum Piece 01"}, "desc": {"pt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."}}, {"id": 2, "image": "https://picsum.photos/seed/art2/600/500", "tag": {"pt": "Ilustração", "en": "Illustration"}, "title": {"pt": "Lorem Ipsum Obra 02", "en": "Lorem Ipsum Piece 02"}, "desc": {"pt": "Sed do eiusmod tempor incididunt ut labore et dolore.", "en": "Sed do eiusmod tempor incididunt ut labore et dolore."}}, {"id": 3, "image": "https://picsum.photos/seed/art3/600/500", "tag": {"pt": "Cadernos & Colagem", "en": "Sketchbook & Collage"}, "title": {"pt": "Lorem Ipsum Obra 03", "en": "Lorem Ipsum Piece 03"}, "desc": {"pt": "Ut enim ad minim veniam, quis nostrud exercitation.", "en": "Ut enim ad minim veniam, quis nostrud exercitation."}}, {"id": 4, "image": "https://picsum.photos/seed/art4/600/500", "tag": {"pt": "Lettering & Tipografia", "en": "Lettering & Typography"}, "title": {"pt": "Lorem Ipsum Obra 04", "en": "Lorem Ipsum Piece 04"}, "desc": {"pt": "Duis aute irure dolor in reprehenderit in voluptate velit.", "en": "Duis aute irure dolor in reprehenderit in voluptate velit."}}, {"id": 5, "image": "https://picsum.photos/seed/art5/600/500", "tag": {"pt": "Projeto Editorial", "en": "Editorial Project"}, "title": {"pt": "Lorem Ipsum Obra 05", "en": "Lorem Ipsum Piece 05"}, "desc": {"pt": "Excepteur sint occaecat cupidatat non proident.", "en": "Excepteur sint occaecat cupidatat non proident."}}, {"id": 6, "image": "https://picsum.photos/seed/art6/600/500", "tag": {"pt": "Estudo de Cor", "en": "Color Study"}, "title": {"pt": "Lorem Ipsum Obra 06", "en": "Lorem Ipsum Piece 06"}, "desc": {"pt": "Sunt in culpa qui officia deserunt mollit anim id est laborum.", "en": "Sunt in culpa qui officia deserunt mollit anim id est laborum."}}]};
 
     document.addEventListener('DOMContentLoaded', init);
   </script>
