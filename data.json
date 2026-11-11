@@ -1,0 +1,194 @@
+{
+  "pt": {
+    "ticker": "DORMENIQUE ✦ ARTES VISUAIS ✦ ILUSTRAÇÃO ✦ DESIGN ✦ PORTFOLIO & ARQUIVO ✦ ",
+    "hero_lead": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "timeline_title": "Trajetória Artística",
+    "gallery_title": "Obras & Projetos",
+    "intro_cards": [
+      {
+        "label": "Lorem Ipsum",
+        "title": "Sobre Mim",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+      },
+      {
+        "label": "Processo",
+        "title": "Visão & Prática",
+        "desc": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident."
+      },
+      {
+        "label": "Contato",
+        "title": "Vamos Conversar",
+        "desc": "Sunt in culpa qui officia deserunt mollit anim id est laborum. Entre em contato para parcerias, encomendas ou projetos independentes."
+      }
+    ],
+    "timeline": [
+      {
+        "year": "2026",
+        "title": "Lorem Ipsum Dolor",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam."
+      },
+      {
+        "year": "2024 — 2025",
+        "title": "Consectetur Adipiscing",
+        "text": "Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper."
+      },
+      {
+        "year": "2022 — 2023",
+        "title": "Tempor Incididunt",
+        "text": "Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
+      },
+      {
+        "year": "2019 — 2021",
+        "title": "Magna Aliqua",
+        "text": "Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam."
+      }
+    ],
+    "footer_title": "Dormenique",
+    "footer_copy": "© 2026 Dormenique. Todos os direitos reservados."
+  },
+  "en": {
+    "ticker": "DORMENIQUE ✦ VISUAL ARTS ✦ ILLUSTRATION ✦ DESIGN ✦ PORTFOLIO & ARCHIVE ✦ ",
+    "hero_lead": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "timeline_title": "Artistic Journey",
+    "gallery_title": "Selected Works",
+    "intro_cards": [
+      {
+        "label": "Lorem Ipsum",
+        "title": "About Me",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+      },
+      {
+        "label": "Process",
+        "title": "Vision & Practice",
+        "desc": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident."
+      },
+      {
+        "label": "Contact",
+        "title": "Get In Touch",
+        "desc": "Sunt in culpa qui officia deserunt mollit anim id est laborum. Reach out for collaborations, commissions, or independent creative inquiries."
+      }
+    ],
+    "timeline": [
+      {
+        "year": "2026",
+        "title": "Lorem Ipsum Dolor",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam."
+      },
+      {
+        "year": "2024 — 2025",
+        "title": "Consectetur Adipiscing",
+        "text": "Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper."
+      },
+      {
+        "year": "2022 — 2023",
+        "title": "Tempor Incididunt",
+        "text": "Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
+      },
+      {
+        "year": "2019 — 2021",
+        "title": "Magna Aliqua",
+        "text": "Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam."
+      }
+    ],
+    "footer_title": "Dormenique",
+    "footer_copy": "© 2026 Dormenique. All rights reserved."
+  },
+  "gallery": [
+    {
+      "id": 1,
+      "image": "https://picsum.photos/seed/art1/600/500",
+      "tag": {
+        "pt": "Pintura / Técnica Mista",
+        "en": "Painting / Mixed Media"
+      },
+      "title": {
+        "pt": "Lorem Ipsum Obra 01",
+        "en": "Lorem Ipsum Piece 01"
+      },
+      "desc": {
+        "pt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      }
+    },
+    {
+      "id": 2,
+      "image": "https://picsum.photos/seed/art2/600/500",
+      "tag": {
+        "pt": "Ilustração",
+        "en": "Illustration"
+      },
+      "title": {
+        "pt": "Lorem Ipsum Obra 02",
+        "en": "Lorem Ipsum Piece 02"
+      },
+      "desc": {
+        "pt": "Sed do eiusmod tempor incididunt ut labore et dolore.",
+        "en": "Sed do eiusmod tempor incididunt ut labore et dolore."
+      }
+    },
+    {
+      "id": 3,
+      "image": "https://picsum.photos/seed/art3/600/500",
+      "tag": {
+        "pt": "Cadernos & Colagem",
+        "en": "Sketchbook & Collage"
+      },
+      "title": {
+        "pt": "Lorem Ipsum Obra 03",
+        "en": "Lorem Ipsum Piece 03"
+      },
+      "desc": {
+        "pt": "Ut enim ad minim veniam, quis nostrud exercitation.",
+        "en": "Ut enim ad minim veniam, quis nostrud exercitation."
+      }
+    },
+    {
+      "id": 4,
+      "image": "https://picsum.photos/seed/art4/600/500",
+      "tag": {
+        "pt": "Lettering & Tipografia",
+        "en": "Lettering & Typography"
+      },
+      "title": {
+        "pt": "Lorem Ipsum Obra 04",
+        "en": "Lorem Ipsum Piece 04"
+      },
+      "desc": {
+        "pt": "Duis aute irure dolor in reprehenderit in voluptate velit.",
+        "en": "Duis aute irure dolor in reprehenderit in voluptate velit."
+      }
+    },
+    {
+      "id": 5,
+      "image": "https://picsum.photos/seed/art5/600/500",
+      "tag": {
+        "pt": "Projeto Editorial",
+        "en": "Editorial Project"
+      },
+      "title": {
+        "pt": "Lorem Ipsum Obra 05",
+        "en": "Lorem Ipsum Piece 05"
+      },
+      "desc": {
+        "pt": "Excepteur sint occaecat cupidatat non proident.",
+        "en": "Excepteur sint occaecat cupidatat non proident."
+      }
+    },
+    {
+      "id": 6,
+      "image": "https://picsum.photos/seed/art6/600/500",
+      "tag": {
+        "pt": "Estudo de Cor",
+        "en": "Color Study"
+      },
+      "title": {
+        "pt": "Lorem Ipsum Obra 06",
+        "en": "Lorem Ipsum Piece 06"
+      },
+      "desc": {
+        "pt": "Sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "en": "Sunt in culpa qui officia deserunt mollit anim id est laborum."
+      }
+    }
+  ]
+}

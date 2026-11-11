@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dormenique — Portfolio & Archive</title>
   
-  <!-- Tipografia editorial com inspiração vintage -->
+  <!-- Tipografia editorial vintage / retrô moderna -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@700;800;900&display=swap" rel="stylesheet" />
 
   <style>
     /* =========================================================
-       PALETA DE CORES (Baseada na tabela fornecida)
+       PALETA DE CORES (Baseada no guia de estilos)
        ========================================================= */
     :root {
       --red-1: #4A1521;
@@ -115,7 +115,7 @@
       border: none;
       padding: 0.4rem 0.85rem;
       font-family: var(--font-mono);
-      font-weight: 500;
+      font-weight: 600;
       font-size: 0.85rem;
       cursor: pointer;
       transition: background 0.2s, color 0.2s;
@@ -144,7 +144,7 @@
 
     .ticker-content {
       display: inline-block;
-      animation: ticker 25s linear infinite;
+      animation: ticker 30s linear infinite;
     }
 
     @keyframes ticker {
@@ -162,7 +162,7 @@
 
     .hero-name {
       font-family: var(--font-display);
-      font-size: clamp(3.5rem, 12vw, 9.5rem);
+      font-size: clamp(3.2rem, 11vw, 9rem);
       line-height: 0.88;
       font-weight: 900;
       letter-spacing: -0.05em;
@@ -174,7 +174,7 @@
 
     .hero-subtitle {
       font-family: var(--font-mono);
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       color: var(--purple-1);
       max-width: 720px;
       margin: 0 auto 2.5rem;
@@ -227,9 +227,9 @@
       font-size: 0.95rem;
     }
 
-    /* TIMELINE */
+    /* SEÇÕES E TITULOS */
     .section-wrap {
-      max-width: 900px;
+      max-width: 1000px;
       margin: 0 auto 5rem;
       padding: 0 1.5rem;
     }
@@ -239,12 +239,13 @@
       font-size: 2.5rem;
       font-weight: 900;
       color: var(--red-1);
-      margin-bottom: 2rem;
+      margin-bottom: 2.5rem;
       text-transform: uppercase;
       border-left: 6px solid var(--yellow-2);
       padding-left: 1rem;
     }
 
+    /* TIMELINE */
     .timeline {
       position: relative;
       border-left: 3px solid var(--border-dark);
@@ -304,9 +305,6 @@
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: 1.5rem;
-      max-width: 1200px;
-      margin: 0 auto 5rem;
-      padding: 0 1.5rem;
     }
 
     .gallery-item {
@@ -315,6 +313,12 @@
       border-radius: 1rem;
       overflow: hidden;
       box-shadow: 4px 4px 0px var(--border-dark);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .gallery-item:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0px var(--border-dark);
     }
 
     .gallery-img-container {
@@ -334,7 +338,7 @@
     }
 
     .gallery-item:hover .gallery-img-container img {
-      transform: scale(1.04);
+      transform: scale(1.05);
     }
 
     .gallery-info {
@@ -402,28 +406,117 @@
 
   <!-- MARQUEE TICKER -->
   <div class="ticker-bar">
-    <div class="ticker-content" id="ticker-text">
-      <!-- Inserido dinamicamente via JS -->
-    </div>
+    <div class="ticker-content" id="ticker-text"></div>
   </div>
 
   <!-- HERO -->
   <main class="hero-container">
     <h1 class="hero-name">Dormenique</h1>
-    <p class="hero-subtitle" id="hero-lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p class="hero-subtitle" id="hero-lead"></p>
   </main>
 
   <!-- CARDS INTRODUTÓRIOS -->
-  <section class="intro-grid" id="intro-cards">
-    <!-- Inserido dinamicamente via JS -->
-  </section>
+  <section class="intro-grid" id="intro-cards"></section>
 
   <!-- TIMELINE ARTÍSTICA -->
   <section class="section-wrap">
-    <h2 class="section-title" id="timeline-title">Trajetória</h2>
-    <div class="timeline" id="timeline-container">
-      <!-- Inserido dinamicamente via JS -->
-    </div>
+    <h2 class="section-title" id="timeline-title"></h2>
+    <div class="timeline" id="timeline-container"></div>
   </section>
 
-  <!-- GALERIA DE
+  <!-- GALERIA DE OBRAS -->
+  <section class="section-wrap">
+    <h2 class="section-title" id="gallery-title"></h2>
+    <div class="gallery-grid" id="gallery-container"></div>
+  </section>
+
+  <!-- RODAPÉ -->
+  <footer>
+    <div class="footer-title" id="footer-title">Dormenique</div>
+    <div class="footer-copy" id="footer-copy"></div>
+  </footer>
+
+  <script>
+    let currentLang = 'pt';
+    let data = null;
+
+    async function init() {
+      try {
+        const response = await fetch('./data.json');
+        if (!response.ok) throw new Error('Não foi possível carregar data.json');
+        data = await response.json();
+      } catch (err) {
+        console.warn('Carregamento via fetch falhou ou arquivo local isolado. Usando fallback embutido.', err);
+        data = FALLBACK_DATA;
+      }
+      render();
+    }
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      document.getElementById('btn-pt').classList.toggle('active', lang === 'pt');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      render();
+    }
+
+    function render() {
+      if (!data) return;
+      const langData = data[currentLang];
+
+      // Ticker
+      const tickerEl = document.getElementById('ticker-text');
+      const tickerText = (langData.ticker + ' ').repeat(4);
+      tickerEl.innerText = tickerText;
+
+      // Hero
+      document.getElementById('hero-lead').innerText = langData.hero_lead;
+
+      // Cards Introdutórios
+      const introContainer = document.getElementById('intro-cards');
+      introContainer.innerHTML = langData.intro_cards.map(c => `
+        <article class="retro-card">
+          <div class="card-label">${c.label}</div>
+          <h3 class="card-title">${c.title}</h3>
+          <p class="card-desc">${c.desc}</p>
+        </article>
+      `).join('');
+
+      // Timeline
+      document.getElementById('timeline-title').innerText = langData.timeline_title;
+      const timelineContainer = document.getElementById('timeline-container');
+      timelineContainer.innerHTML = langData.timeline.map(t => `
+        <div class="timeline-item">
+          <span class="timeline-year">${t.year}</span>
+          <h4 class="timeline-heading">${t.title}</h4>
+          <p class="timeline-text">${t.text}</p>
+        </div>
+      `).join('');
+
+      // Galeria
+      document.getElementById('gallery-title').innerText = langData.gallery_title;
+      const galleryContainer = document.getElementById('gallery-container');
+      galleryContainer.innerHTML = data.gallery.map(g => `
+        <article class="gallery-item">
+          <div class="gallery-img-container">
+            <img src="${g.image}" alt="${g.title[currentLang] || ''}" loading="lazy" />
+          </div>
+          <div class="gallery-info">
+            <span class="gallery-tag">${g.tag[currentLang] || ''}</span>
+            <h4 class="gallery-title">${g.title[currentLang] || ''}</h4>
+            <p class="gallery-desc">${g.desc[currentLang] || ''}</p>
+          </div>
+        </article>
+      `).join('');
+
+      // Footer
+      document.getElementById('footer-title').innerText = langData.footer_title || 'Dormenique';
+      document.getElementById('footer-copy').innerText = langData.footer_copy;
+    }
+
+    // Fallback caso abra com duplo clique localmente sem servidor HTTP (file://)
+    const FALLBACK_DATA = {"pt": {"ticker": "DORMENIQUE ✦ ARTES VISUAIS ✦ ILUSTRAÇÃO ✦ DESIGN ✦ PORTFOLIO & ARQUIVO ✦ ", "hero_lead": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "timeline_title": "Trajetória Artística", "gallery_title": "Obras & Projetos", "intro_cards": [{"label": "Lorem Ipsum", "title": "Sobre Mim", "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."}, {"label": "Processo", "title": "Visão & Prática", "desc": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident."}, {"label": "Contato", "title": "Vamos Conversar", "desc": "Sunt in culpa qui officia deserunt mollit anim id est laborum. Entre em contato para parcerias, encomendas ou projetos independentes."}], "timeline": [{"year": "2026", "title": "Lorem Ipsum Dolor", "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam."}, {"year": "2024 — 2025", "title": "Consectetur Adipiscing", "text": "Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper."}, {"year": "2022 — 2023", "title": "Tempor Incididunt", "text": "Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."}, {"year": "2019 — 2021", "title": "Magna Aliqua", "text": "Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam."}], "footer_title": "Dormenique", "footer_copy": "© 2026 Dormenique. Todos os direitos reservados."}, "en": {"ticker": "DORMENIQUE ✦ VISUAL ARTS ✦ ILLUSTRATION ✦ DESIGN ✦ PORTFOLIO & ARCHIVE ✦ ", "hero_lead": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "timeline_title": "Artistic Journey", "gallery_title": "Selected Works", "intro_cards": [{"label": "Lorem Ipsum", "title": "About Me", "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."}, {"label": "Process", "title": "Vision & Practice", "desc": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident."}, {"label": "Contact", "title": "Get In Touch", "desc": "Sunt in culpa qui officia deserunt mollit anim id est laborum. Reach out for collaborations, commissions, or independent creative inquiries."}], "timeline": [{"year": "2026", "title": "Lorem Ipsum Dolor", "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam."}, {"year": "2024 — 2025", "title": "Consectetur Adipiscing", "text": "Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper."}, {"year": "2022 — 2023", "title": "Tempor Incididunt", "text": "Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."}, {"year": "2019 — 2021", "title": "Magna Aliqua", "text": "Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam."}], "footer_title": "Dormenique", "footer_copy": "© 2026 Dormenique. All rights reserved."}, "gallery": [{"id": 1, "image": "https://picsum.photos/seed/art1/600/500", "tag": {"pt": "Pintura / Técnica Mista", "en": "Painting / Mixed Media"}, "title": {"pt": "Lorem Ipsum Obra 01", "en": "Lorem Ipsum Piece 01"}, "desc": {"pt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."}}, {"id": 2, "image": "https://picsum.photos/seed/art2/600/500", "tag": {"pt": "Ilustração", "en": "Illustration"}, "title": {"pt": "Lorem Ipsum Obra 02", "en": "Lorem Ipsum Piece 02"}, "desc": {"pt": "Sed do eiusmod tempor incididunt ut labore et dolore.", "en": "Sed do eiusmod tempor incididunt ut labore et dolore."}}, {"id": 3, "image": "https://picsum.photos/seed/art3/600/500", "tag": {"pt": "Cadernos & Colagem", "en": "Sketchbook & Collage"}, "title": {"pt": "Lorem Ipsum Obra 03", "en": "Lorem Ipsum Piece 03"}, "desc": {"pt": "Ut enim ad minim veniam, quis nostrud exercitation.", "en": "Ut enim ad minim veniam, quis nostrud exercitation."}}, {"id": 4, "image": "https://picsum.photos/seed/art4/600/500", "tag": {"pt": "Lettering & Tipografia", "en": "Lettering & Typography"}, "title": {"pt": "Lorem Ipsum Obra 04", "en": "Lorem Ipsum Piece 04"}, "desc": {"pt": "Duis aute irure dolor in reprehenderit in voluptate velit.", "en": "Duis aute irure dolor in reprehenderit in voluptate velit."}}, {"id": 5, "image": "https://picsum.photos/seed/art5/600/500", "tag": {"pt": "Projeto Editorial", "en": "Editorial Project"}, "title": {"pt": "Lorem Ipsum Obra 05", "en": "Lorem Ipsum Piece 05"}, "desc": {"pt": "Excepteur sint occaecat cupidatat non proident.", "en": "Excepteur sint occaecat cupidatat non proident."}}, {"id": 6, "image": "https://picsum.photos/seed/art6/600/500", "tag": {"pt": "Estudo de Cor", "en": "Color Study"}, "title": {"pt": "Lorem Ipsum Obra 06", "en": "Lorem Ipsum Piece 06"}, "desc": {"pt": "Sunt in culpa qui officia deserunt mollit anim id est laborum.", "en": "Sunt in culpa qui officia deserunt mollit anim id est laborum."}}]};
+
+    document.addEventListener('DOMContentLoaded', init);
+  </script>
+</body>
+</html>
