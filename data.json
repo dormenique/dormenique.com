@@ -3,15 +3,15 @@
   "pt": {
     "nav": {
       "about": "Sobre",
-      "timeline": "Trajetória",
+      "timeline": "Trajectória",
       "works": "Obras",
-      "contact": "Contato"
+      "contact": "Contacto"
     },
     "ticker": "DORMENIQUE ✦ ARTES VISUAIS ✦ ILUSTRAÇÃO ✦ DESIGN ✦ PORTFOLIO & ARQUIVO ✦ ",
     "hero": {
       "badge": "HELLO & WELCOME",
       "title": "Olá, eu sou a Dormenique",
-      "subtitle": "Artista visual e criadora com foco em processos manuais e narrativas visuais.",
+      "subtitle": "Artista visual, professora e criadora com foco em processos manuais e design gráfico.",
       "paragraphs": [
         "Desde 1997 eu sou artista. Já de pequena eu estudava desenho, pintava quadros e passava horas modelando em biscuit em casa com minha mãe.",
         "Formada professora de artes pela Faculdade Paulista de Artes em São Paulo/SP, sou especialista em Hand Lettering e lecionei de forma independente no Brasil, em parcerias com gigantes como Papelaria Universitária, SESC e Casa das Letras."
@@ -19,7 +19,7 @@
       "cta_text": "entrar em contacto ↗",
       "cta_link": "#contact"
     },
-    "timeline_title": "Trajetória",
+    "timeline_title": "Trajectória",
     "timeline_tabs": {
       "artistic": "Prática Artística",
       "education": "Formação & Estudos"
@@ -30,17 +30,17 @@
       {
         "label": "Processo",
         "title": "Visão & Prática",
-        "desc": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+        "desc": "Arte não deve ser só para alguns, arte é a resposta e é o caminho para todos. Toda gente merece ter arte em sua vida."
       },
       {
         "label": "Técnicas",
         "title": "Manual & Analógico",
-        "desc": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        "desc": "A arte manual é o que alimenta nossa saúde mental. Valorizar os processos manuais é o combustível da minha inspiração."
       },
       {
         "label": "Explorações",
         "title": "Cor & Forma",
-        "desc": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam."
+        "desc": "Ensinar o outro a perder o medo de criar é o que me move. Minhas aulas sempre trouxeram a exploração e o erro como forma de aprendizado e tentativa. Ninguém nunca deve ter medo de tentar. Arte é para todos."
       }
     ],
     "timeline": [
@@ -75,15 +75,17 @@
     ],
     "education": [
       {
-        "year": "Graduação",
-        "city": "São Paulo - SP - Brasil",
-        "title": "Licenciatura em Artes Visuais",
-        "institution": "Faculdade Paulista de Artes (FPA)",
-        "text": "Formação pedagógica e prática artística com ênfase em história da arte, didática do ensino visual, expressão plástica, desenho e teorias do processo criativo.",
+        "year": "2023 — 2024",
+        "type": "Pesquisa Autoral",
+        "city": "Lisboa - Portugal",
+        "title": "Processos Manuais, Colagem & Encadernação",
+        "institution": "Pesquisa Autoral de Atelier",
+        "text": "Imersão em técnicas analógicas, encadernação artesanal, modelagem e exploração de materiais não convencionais para projetos pedagógicos e autorais.",
         "link": "#"
       },
       {
-        "year": "Especialização",
+        "year": "2017 — 2019",
+        "type": "Especialização Livre",
         "city": "São Paulo - SP - Brasil",
         "title": "Hand Lettering & Caligrafia Moderna",
         "institution": "Estudos Independentes & Oficinas Livres",
@@ -91,11 +93,12 @@
         "link": "#"
       },
       {
-        "year": "Formação Contínua",
-        "city": "Lisboa - Portugal",
-        "title": "Processos Manuais, Colagem & Encadernação",
-        "institution": "Pesquisa Autoral de Atelier",
-        "text": "Imersão em técnicas analógicas, encadernação artesanal, modelagem e exploração de materiais não convencionais para projetos pedagógicos e autorais.",
+        "year": "2015 — 2017",
+        "type": "Graduação",
+        "city": "São Paulo - SP - Brasil",
+        "title": "Licenciatura em Artes Visuais",
+        "institution": "Faculdade Paulista de Artes (FPA)",
+        "text": "Formação pedagógica e prática artística com ênfase em didática do ensino visual, expressão plástica, desenho e teorias do processo criativo.",
         "link": "#"
       }
     ],
@@ -113,7 +116,7 @@
     "hero": {
       "badge": "HELLO & WELCOME",
       "title": "Hi, I'm Dormenique",
-      "subtitle": "Visual artist and creator focused on tactile processes and thoughtful visual storytelling.",
+      "subtitle": "Visual artist, educator, and creator focused on tactile processes and graphic design.",
       "paragraphs": [
         "I have been an artist since 1997. Since childhood, I was drawing, painting canvases, and spending hours sculpting cold porcelain clay at home with my mother.",
         "Graduated in Art Education from Faculdade Paulista de Artes in São Paulo, Brazil, I specialize in Hand Lettering and taught independently across Brazil in partnership with major institutions such as Papelaria Universitária, SESC, and Casa das Letras."
@@ -132,17 +135,17 @@
       {
         "label": "Process",
         "title": "Vision & Practice",
-        "desc": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+        "desc": "Art shouldn't be only for the few; art is the answer and the path for everyone. Everyone deserves to experience art in their life."
       },
       {
         "label": "Techniques",
         "title": "Tactile & Analog",
-        "desc": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        "desc": "Handcrafted art nurtures our mental well-being. Valuing manual processes is the essential fuel of my inspiration."
       },
       {
         "label": "Explorations",
         "title": "Color & Form",
-        "desc": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam."
+        "desc": "Teaching others to overcome the fear of creating is what moves me. My classes embrace exploration and mistakes as vital parts of learning and trying. No one should ever fear giving it a try. Art belongs to everyone."
       }
     ],
     "timeline": [
@@ -177,15 +180,17 @@
     ],
     "education": [
       {
-        "year": "Degree",
-        "city": "São Paulo - SP - Brazil",
-        "title": "BA in Visual Arts & Art Education",
-        "institution": "Faculdade Paulista de Artes (FPA)",
-        "text": "Academic pedagogy and artistic practice covering art history, visual education methodologies, drawing, and creative process theories.",
+        "year": "2023 — 2024",
+        "type": "Studio Research",
+        "city": "Lisbon - Portugal",
+        "title": "Analog Crafts, Paper Collage & Bookbinding",
+        "institution": "Studio Research",
+        "text": "Hands-on exploration of tactile materials, handmade bookbinding, and non-digital media tailored for slow living and educational workshops.",
         "link": "#"
       },
       {
-        "year": "Specialization",
+        "year": "2017 — 2019",
+        "type": "Specialization",
         "city": "São Paulo - SP - Brazil",
         "title": "Hand Lettering & Modern Calligraphy",
         "institution": "Independent Research & Free Studios",
@@ -193,11 +198,12 @@
         "link": "#"
       },
       {
-        "year": "Continuing Studies",
-        "city": "Lisbon - Portugal",
-        "title": "Analog Crafts, Paper Collage & Bookbinding",
-        "institution": "Studio Research",
-        "text": "Hands-on exploration of tactile materials, handmade bookbinding, and non-digital media tailored for slow living and educational workshops.",
+        "year": "2015 — 2017",
+        "type": "Degree",
+        "city": "São Paulo - SP - Brazil",
+        "title": "BA in Visual Arts & Art Education",
+        "institution": "Faculdade Paulista de Artes (FPA)",
+        "text": "Academic pedagogy and artistic practice covering visual education methodologies, plastic expression, drawing, and creative process theories.",
         "link": "#"
       }
     ],
