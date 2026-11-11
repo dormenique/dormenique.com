@@ -1,5 +1,7 @@
 {
   "profile_image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80",
+  "contact_email": "hello@dormenique.com",
+  "formspree_id": "xaeoyowy",
   "pt": {
     "nav": {
       "about": "Sobre",
@@ -101,6 +103,18 @@
         "link": "#"
       }
     ],
+    "contact": {
+      "title": "Vamos Conversar",
+      "subtitle": "Tem um projeto, parceria, encomenda ou quer saber mais sobre oficinas e aulas? Deixe uma mensagem abaixo ou envie um email.",
+      "name_label": "Seu Nome",
+      "name_placeholder": "Como se chama?",
+      "email_label": "Seu Email",
+      "email_placeholder": "seuemail@exemplo.com",
+      "message_label": "Mensagem",
+      "message_placeholder": "Conte-me sobre a sua ideia ou projeto...",
+      "submit_btn": "Enviar Mensagem ✦",
+      "direct_email_label": "Ou escreva diretamente para:"
+    },
     "footer_title": "Dormenique",
     "footer_copy": "© 2026 Dormenique. Todos os direitos reservados."
   },
@@ -205,6 +219,18 @@
         "link": "#"
       }
     ],
+    "contact": {
+      "title": "Let's Talk",
+      "subtitle": "Have a project in mind, a commission, or want to know more about workshops and classes? Leave a note below or reach out directly.",
+      "name_label": "Your Name",
+      "name_placeholder": "What's your name?",
+      "email_label": "Your Email",
+      "email_placeholder": "youremail@example.com",
+      "message_label": "Message",
+      "message_placeholder": "Tell me about your idea or project...",
+      "submit_btn": "Send Message ✦",
+      "direct_email_label": "Or email directly to:"
+    },
     "footer_title": "Dormenique",
     "footer_copy": "© 2026 Dormenique. All rights reserved."
   },
